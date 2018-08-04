@@ -1,0 +1,48 @@
+{% extends "base2.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+{% block app_content %}
+    <style>
+      .main {
+
+        background-color: white;
+
+        margin-top: 100px;
+
+        margin-left: 0;
+        margin-right: 0;
+
+      }
+
+      body {
+            background-color: #011b3d;
+      }
+
+
+
+
+
+
+    </style>
+
+
+
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4 main">
+            <h2 style="font-family:verdana;">Register</h2>
+            <br>
+            {{ wtf.quick_form(form) }}
+            <br>
+            <p style="text-align:right;"><a href="{{ url_for('main.index') }}">back to home</a></p>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+
+
+
+{% endblock %}
+

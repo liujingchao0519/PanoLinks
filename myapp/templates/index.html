@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+{% block app_content %}
+<style>
+  body {
+  color:#305389;
+    font: 20px Montserrat, sans-serif;
+    font-weight: lighter;
+
+  }
+  .main{
+
+      margin-top:10px;
+      margin-bottom: 0;
+      padding-bottom: 100px;
+
+  }
+
+
+
+
+  .bg-1 {
+
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+  }
+  .bg-4 {
+    font: 15px Montserrat, sans-serif;
+    font-weight: lighter;
+
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+
+    background-color: #323A45;
+    color: #ffffff;
+    }
+
+
+  .panel {
+
+
+    border:none;
+    border-radius:0;
+    transition: box-shadow 0.5s;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    font:sans-serif;
+    font-weight: lighter;
+
+    color:white;
+    }
+
+  .panel:hover {
+    box-shadow: 20px 20px 80px rgba(0,0,0, .4);
+  }
+  .pn-1{
+  background-color: #355585;
+  }
+  .pn-2{
+  background-color: #d65c61;
+  }
+  .pn-3{
+  background-color: #71b0aa;
+  }
+
+  .above {
+  margin-top: 70px;
+   padding-top: 70px;
+    padding-bottom: 70px;
+    background-color:#EEEEEE;
+
+  }
+  .contact {
+  background-color:#EEEEEE;
+  border:1px solid #305389;
+
+  }
+  .contact:hover {
+  background-color: #305389;
+  color: #EEEEEE;
+  }
+
+
+</style>
+
+<div class="jumbotron text-center main">
+    <br>
+    <br>
+  <h2>Welcome to PanoLinks</h2>
+  <p>a dynamic research and social networking tool for job applicants...</p>
+    <br>
+    <br>
+
+  <form class="form-inline">
+    <div class="input-group">
+      <input type="email" class="form-control" size="50" placeholder="Enter your job applications-related search..." required>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-danger">Search</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="container-fluid bg-1 text-center">
+  <h3 class="margin">Start using Panolinks Now!</h3>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-default text-center pn-1">
+
+        <div class="panel-body">
+            <h4>View Results</h4>
+            <h4>Take me there</h4>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-default text-center pn-2">
+
+        <div class="panel-body">
+            <h4>Interact with applicants</h4>
+            <h4>Learn more</h4>
+
+
+        </div>
+      </div>
+    </div>
+   <div class="col-sm-4">
+      <div class="panel panel-default text-center pn-3">
+
+        <div class="panel-body">
+            <h4>Enter the forum...</h4>
+            <h5>Take me there</h5>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+    <div class="container-fluid above text-center">
+        <button type="button" class="btn btn-lg contact">Contact Jingchao</button>
+
+    </div>
+
+    <footer class="container-fluid bg-4">
+        <div class="row">
+            <div class="col-md-4 text-left">
+              <p><span class="glyphicon glyphicon-map-marker"></span> California, US</p>
+              <p><span class="glyphicon glyphicon-phone"></span> Phone: +1 6178522135</p>
+              <p><span class="glyphicon glyphicon-envelope"></span> Email: jliu@Jd18.law.harvard.edu</p>
+            </div>
+        </div>
+        <p class="text-center">© 2018 Jingchao Liu.  All rights reserved.</p>
+    </footer>
+</div>
+
+
+
+
+
+
+{% endblock %}

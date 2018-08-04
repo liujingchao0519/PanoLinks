@@ -1,0 +1,56 @@
+{% extends "base2.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+
+{% block app_content %}
+    <style>
+      .main{
+
+        background-color: white;
+        margin-top: 150px;
+
+        margin-left: 0;
+        margin-right: 0;
+
+      }
+
+      body {
+            background-color: #272733;
+       }
+      h1 {
+        font-family: "Verdana";
+      }
+
+
+
+    </style>
+
+
+
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+
+                <div class="col-md-4 main">
+                    <div id="content">
+
+                        <h2 style="font-family:verdana;">Sign In</h2>
+                        <br>
+                        {{ wtf.quick_form(form) }}
+                        <br>
+                        <p>New User? <a href="{{ url_for('auth.register') }}">Click to Register!</a></p>
+
+                    </div>
+
+                </div>
+
+            <div class="col-md-4">
+            </div>
+        </div>
+
+
+
+
+
+{% endblock %}

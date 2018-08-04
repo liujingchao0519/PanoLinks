@@ -1,0 +1,129 @@
+
+
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <style>
+
+
+         .main{
+         background-color:#d6766c;
+         font:sans-serif;
+        font-weight: lighter;
+         color: white;
+         padding-bottom:70px;
+         margin-right:98px;
+
+
+        }
+        .tb {
+        box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+        background-color:rgba(245, 198, 87, .1);
+        margin-left:15px;
+        margin-top:30px;
+        }
+        .button {
+            margin-right: 15px;
+            float: right;
+            color: #425567;
+            border-color: none;
+        }
+        body {
+            color: #425567;
+
+
+          }
+          .button:hover {
+          background-color: #1791d7;
+          color: #EEEEEE;
+          }
+        hr {
+
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: 35%;
+
+
+        }
+
+
+    </style>
+    <div class="jumbotron text-left main">
+           <h3>{{ user.username }}'s applications...</h3>
+
+        <button type="button" class="btn button ">Send Message</button>
+        <button type="button" class="btn button " >Follow</button>
+
+
+    </div>
+
+    <hr>
+    <div class="row">
+
+
+
+
+        <div class="col-md-8 tb">
+
+            <table class ="table table-hover">
+                <thead>
+                  <tr>
+
+                    <th style="width: 20%">Status</th>
+                    <th style="width: 20%">Company</th>
+                      <th style="width: 15%">Sent</th>
+                    <th style="width: 15%">Channel</th>
+                    <th style="width: 15%">Interview?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for app in entries %}
+                    <tr>
+                        <td style="width: 20%">
+                            {% if app.status=='rejected' %}
+                            was <span class="bg-danger">rejected</span> by
+                            {% elif app.status=='interviewing' %}
+                            <span class="bg-info">is interviewing</span> with
+                            {% elif app.status=='applied' %}
+                            has applied to
+                            {% else %}
+                            <span class="bg-success">accepted</span> by
+                            {% endif %}
+                        </td>
+                        <td style="width: 20%">{{app.company}}</td>
+                        <td style="width: 15%">{{app.sent.strftime('%Y-%m-%d')}}</td>
+                        <td style="width: 15%">{{app.channel}}</td>
+                        <td style="width: 15%">
+                            {% if app.invite %}
+                            Yes
+                            {% else %}
+                            Not Yet
+                            {% endif %}
+
+                        </td>
+
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% if prev_url %}
+            <a href="{{ prev_url }}">prev page</a>
+            {% endif %}
+            <br>
+            {% if next_url %}
+            <a href="{{ next_url }}">next page</a>
+            {% endif %}
+
+        </div>
+        <div class="col-md-4">
+        </div>
+
+
+    </div>
+
+
+
+{% endblock %}

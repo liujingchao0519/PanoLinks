@@ -1,0 +1,19 @@
+{% extends 'bootstrap/base.html' %}
+
+
+{% block title %}
+    {% if title %}{{ title }} - PanoLinks{% else %}Welcome to PanoLinks{% endif %}
+{% endblock %}
+
+
+
+{% block content %}
+    <div class="container">
+        {% block app_content %}{% endblock %}
+    </div>
+{% endblock %}
+
+
+
+
+
